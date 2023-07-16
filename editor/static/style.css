@@ -1,0 +1,237 @@
+/* style the navbar */
+.navbar {
+    background: #1e1f22
+}
+
+.photo-icon {
+    font-size: 24px;
+    top: 3px;
+    width: 24px;
+    height: 35px;
+    position: relative;
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    color: white !important;
+}
+
+.nav-buttons {
+    border-radius: 20px;
+    color: white;
+    width: 100px;
+    padding: 8px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-color: rgba(203, 199, 203, 0.932) !important;
+}
+
+.open-button {
+    background: #2b2c2f;
+    margin-left: 250px;
+}
+
+.download-button {
+    background: #2c7dfa;
+    border: 1px solid #2c7dfa;
+}
+
+.download-disabled {
+    pointer-events: none;
+    color: rgba(169, 168, 168, 0.802) !important;
+    cursor: not-allowed;
+}
+
+/* style the sidebar */
+.sidebar {
+    font-size: 10pt;
+    margin: 0;
+    padding: 0;
+    width: 70px;
+    background: #25272b;
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.sidebar div {
+    display: block;
+    color: white;
+    padding: 18px;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* disable class */
+.disabled {
+    pointer-events: none;
+    color: rgba(203, 199, 203, 0.932) !important;
+    cursor: not-allowed !important;
+
+}
+
+/* editor area */
+.editor {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-top: 20px;
+}
+
+#reset-area {
+    visibility: hidden;
+    margin: auto;
+}
+
+.reset-button {
+    border-radius: 12px;
+    color: white;
+    width: 100px;
+    padding: 8px;
+    font-family: 'Montserrat', sans-serif;
+    background: rgb(255, 48, 108);
+    border: 1px solid rgb(255, 48, 108);
+
+}
+
+/* upload area */
+.add-icon {
+    font-size: 90px !important;
+    color: rgba(123, 119, 119, 0.83);
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+
+.upload-area {
+    width: 600px;
+    height: 400px;
+    justify-content: center;
+    border: 3px dashed rgba(123, 119, 119, 0.83);
+    color: rgba(157, 157, 157, 0.83);
+    border-radius: 12px;
+    display: none;
+    background-color: rgba(183, 183, 183, 0.17);
+    margin-top: 30px;
+}
+
+.upload-button {
+    background: #2c7dfa;
+    border: 1px solid #2c7dfa;
+    border-radius: 6px;
+    color: white;
+    width: 200px;
+    padding: 8px;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    margin: auto;
+}
+
+canvas {
+    display: none;
+    border: 2px solid #d3d3d3;
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+.cropper-container {
+    margin-top: 20px;
+    background-color: white;
+}
+
+.apply-button {
+    border-radius: 12px;
+    color: white;
+    width: 100px;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+    background: #2c7dfa;
+    border: 1px solid #2c7dfa;
+}
+
+#crop-fields {
+    margin-top: 20px;
+}
+
+
+/* resize */
+#resize-fields {
+    margin-top: 20px
+}
+
+.form-group {
+    width: 248px !important;
+}
+
+/* rotate and flip */
+.rotate-button {
+    border: none;
+    background: none;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 18px;
+    color: #000000;
+}
+
+#rotate-fields {
+    margin-top: 20px;
+}
+
+/* text area */
+.circle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #eee;
+}
+
+.hidden {
+    position: absolute;
+    opacity: 0;
+}
+
+.colorText {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 10px;
+}
+
+.addTextButton {
+    background-color: #25272b;
+    color: white;
+    border: 1px solid #25272b;
+}
+
+#text-fields {
+    margin-top: 20px;
+}
+
+@media screen and (max-width:600px) {
+    .editor{
+        margin-left: 25%; 
+        width: 75%;
+    }
+    #reset-area{
+        margin-left:0;
+    }
+    .upload-area {
+        width:40%;
+        height: 40%;
+    }
+    canvas{
+        width:80%;
+        /* height: 80%; */
+
+    }
+
+}
