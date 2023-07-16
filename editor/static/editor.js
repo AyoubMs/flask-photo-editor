@@ -12,7 +12,40 @@ const canvas = document.getElementById("canvas1");
 var context = canvas.getContext('2d');
 let mergedImage;
 // Task 2: Declare variables here
+const uploadArea = document.getElementById('upload-area');
+const input = document.getElementById('input-image');
+let mainImageFile;
+// check if canvas is empty
+function isCanvasEmpty(cnv) {
+    const blank = document.createElement('canvas');
+    blank.width = cnv.width;
+    blank.height = cnv.height;
+    return cnv.toDataURL() === blank.toDataURL();
+}
 
+// Check if the image is uploaded or not. If not, give the upload option
+if (isCanvasEmpty(canvas) === true) {
+    uploadArea.style.display = 'block';
+    uploadArea.addEventListener('click', function() {
+        input.click();
+    })
+}
+// display uploaded image
+input.addEventListener('change', (input) => {
+    let imageFile = input.target.files[0];
+    const fileReader = new FileReader();
+    fileReader.onload = function (e) {
+        drawCanvasImage(e.target.result);
+        mainImageFile = e.target.result;
+        uploadArea.style.display = 'none';
+        canvas.style.display = 'block';
+        downloadButton.classList.remove('download-disabled');
+        for(let feature of featuresArray) {
+            feature.classList.remove('disabled');
+        }
+    }
+    fileReader.readAsDataURL(imageFile);
+})
 // Task 3: Declare variables here
 
 // Task 5: Declare variables here
