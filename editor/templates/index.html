@@ -119,11 +119,14 @@
           id="crop-option"
           style="cursor: pointer; color: white"
           class="d-flex flex-column disabled"
+          onclick="clickCropOption()"
         >
           <i class="material-icons">crop</i>
           Crop
         </div>
-
+        <div class="d-none justify-content-center pt-3 pb-3" id="crop-fields">
+          <button onclick="cropImage()" class="apply-button">Apply</button>
+        </div>
         <!-- Task 5: Replace the following `resize-option` container with the updated code -->
         <div
           id="resize-option"

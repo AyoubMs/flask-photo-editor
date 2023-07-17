@@ -47,7 +47,43 @@ input.addEventListener('change', (input) => {
     fileReader.readAsDataURL(imageFile);
 })
 // Task 3: Declare variables here
+const cropFields = document.getElementById('crop-fields');
+let cropper;
 
+// crop image 
+function clickCropOption() {
+    // Update the canvas with the final edited image in case some other editing feature is applied before crop.
+    resetFields()
+    cropFields.classList.add('d-flex')
+    cropFields.classList.remove('d-none')
+    addActive(cropOption)
+    setTimeout(() => {
+        if (!cropper || !cropper.ready) {
+            cropper = new Cropper(
+                canvas, {
+                background: false,
+                autoCropArea: 1, 
+                viewMode: 2,
+                scalable: false,
+                zoomable: false,
+                movable: false,
+            })
+        }
+    }, 10);
+}
+
+// destroy cropper
+function destroyCropper() {
+    if (cropper) {
+        cropper.destroy()
+    }
+}
+
+function cropImage() {
+    croppedImage = cropper.getCroppedCanvas().toDataURL()
+    destroyCropper()
+    drawCanvasImage(croppedImage)
+}
 // Task 5: Declare variables here
 
 // Task 7: Declare variables here
@@ -77,6 +113,9 @@ function resetFields(){
     if (mergedImage) {
         drawCanvasImage(mergedImage)
     }
+    cropFields.classList.remove('d-flex');
+    cropFields.classList.add('d-none');
+    destroyCropper();
 }
 
 // Task 1: Add drawCanvasImage() function here
